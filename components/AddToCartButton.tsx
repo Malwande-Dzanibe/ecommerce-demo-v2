@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useContext } from 'react'
-import { context } from '@/store/ContextComponent'
+import context from '@/store/ContextComponent'
 import {FaCartPlus} from "react-icons/fa"
 
 type Props = {

@@ -2,7 +2,7 @@
 
 import React, { useContext, useState } from 'react'
 import Image from 'next/image'
-import { context } from '@/store/ContextComponent'
+import context from '@/store/ContextComponent'
 import {FaChevronLeft, FaChevronRight} from "react-icons/fa"
 
 type Props = {
@@ -39,7 +39,7 @@ const prevImage = ()=>{
           {
             product.image.map((item, imageIndex)=>{
               return(
-                <div className={index === imageIndex ? "btn2":"btn"}></div>
+                <div className={index === imageIndex ? "btn2":"btn"} key={imageIndex}></div>
               )
             })
           }

@@ -7,67 +7,62 @@ import {toast} from 'react-hot-toast'
 
 export const context = createContext<ContextType|null>(null)
 
-const ContextComponent = ({children}: {
+export const ContextComponent = ({children}: {
   children: React.ReactNode;
 }) => {
 
-  const cartInL = ()=>{
+  const cartInL = () : Product[]=>{
 
-    let result: any;
+    let result
 
-    if(typeof window !== 'undefined'){
-      result = localStorage.getItem("cartInL")
-    }
-    if(result === undefined || null){
-      result = []
+    if(typeof window !== "undefined"){
+      result = localStorage.getItem("cartInL3") 
+    }if(result === undefined || result ===  null){
+      return []
     }
 
     return result?JSON.parse(result):[]
   }
 
-  const quantityFromL = ()=>{
-    let result: any;
-
-    if(typeof window !== 'undefined'){
-      result = localStorage.getItem("quantityFromL")
-    }
-    if(result === undefined || null){
-      result = 1
+  const quantityFromL = () : number=>{
+    let result
+    if(typeof window !== "undefined"){
+     result = localStorage.getItem("quantityFromL3") 
+    }if(result === undefined || result ===  null){
+      return 1
     }
 
     return result?JSON.parse(result):1
   }
 
-  const totalQuantityFromL = ()=>{
-    let result: any;
-
-    if(typeof window !== 'undefined'){
-      result = localStorage.getItem("totalQuantityFromL")
-    }
-    if(result === undefined || null){
-      result = 0
+  const totalQuantityFromL = () : number=>{
+    let result;
+    if(typeof window !== "undefined"){
+      result = localStorage.getItem("totalQuantityFromL3") 
+    }if(result=== undefined ||result ===  null){
+      return 0
     }
 
     return result?JSON.parse(result):0
   }
 
-  const totalPriceFromL = ()=>{
-    let result: any;
+  const totalPriceFromL = () : number=>{
 
-    if(typeof window !== 'undefined'){
-      result = localStorage.getItem("totalPriceFromL")
-    }
-    if(result === undefined || null){
-      result = 0
+    let result;
+
+    if(typeof window !== "undefined"){
+      result = localStorage.getItem("totalPriceFromL3") 
+    }if(result === undefined ||result === null){
+      return 0
     }
 
     return result?JSON.parse(result):0
   }
 
   const [cartItems, setCartItems] =useState<Product[]>(cartInL)
-  const [quantity, setQuantity] = useState<number>(quantityFromL)
+  const [quantity, setQuantity] = useState<number>(quantityFromL )
   const [totalQuantity, setTotalQuantity] = useState<number>(totalQuantityFromL)
-  const [totalPrice, setTotalPrice] = useState<number>(totalPriceFromL)
+  const [totalPrice, setTotalPrice] = useState<number>(totalPriceFromL )
   
   const incQuantity = ()=>{
     setQuantity((prev)=>{
@@ -175,10 +170,10 @@ const ContextComponent = ({children}: {
   }
 
   useEffect(()=>{
-    localStorage.setItem("cartInL", JSON.stringify(cartItems))
-    localStorage.setItem("quantityFromL", JSON.stringify(quantity))
-    localStorage.setItem("totalQuantityFromL", JSON.stringify(totalQuantity))
-    localStorage.setItem("totalPriceFromL", JSON.stringify(totalPrice))
+    localStorage.setItem("cartInL3", JSON.stringify(cartItems))
+    localStorage.setItem("quantityFromL3", JSON.stringify(quantity))
+    localStorage.setItem("totalQuantityFromL3", JSON.stringify(totalQuantity))
+    localStorage.setItem("totalPriceFromL3", JSON.stringify(totalPrice))
   },[cartItems, quantity, totalQuantity, totalPrice])
 
   return (
@@ -200,4 +195,4 @@ const ContextComponent = ({children}: {
   )
 }
 
-export default ContextComponent 
+export default context

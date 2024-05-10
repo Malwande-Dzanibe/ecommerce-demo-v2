@@ -1,6 +1,6 @@
 "use client" 
-import React, {useContext} from 'react'
-import { context } from '@/store/ContextComponent'
+import React, {useContext, useEffect, useState} from 'react'
+import  context from '@/store/ContextComponent'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -8,8 +8,14 @@ const page = () => {
 
 const usingContext = useContext(context) as ContextType
 
+const [isClient, setIsClient] = useState(false)
+
+useEffect(()=>{
+  setIsClient(true)
+},[isClient])
+
   if(usingContext.cartItems.length < 1){
-    return (
+    return (isClient &&
       <div className='wrapper3'>
           <p className='empty'>you do not have items in your cart</p>
           <div>
@@ -21,7 +27,7 @@ const usingContext = useContext(context) as ContextType
     )
   }
 
-  return (
+  return (isClient &&
     <>
            <div className={"checkout-wrapper"}>
         <div>

@@ -1,15 +1,21 @@
 "use client"
 
 import Link from 'next/link'
-import React, {useContext} from 'react'
-import { context } from '@/store/ContextComponent'
+import React, {useContext, useEffect, useState} from 'react'
+import context  from '@/store/ContextComponent'
 import {FaCartPlus} from "react-icons/fa"
 
 const NavBar = () => {
 
-    const usingContext = useContext(context) as ContextType
+const usingContext = useContext(context) as ContextType
 
-  return (
+const [isClient, setIsClient] = useState(false)
+
+useEffect(()=>{
+  setIsClient(true)
+},[isClient])
+
+  return (isClient &&
     <div>
         <nav>
             <div className='logo-wrapper'>
