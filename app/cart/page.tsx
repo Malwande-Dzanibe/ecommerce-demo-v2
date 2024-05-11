@@ -28,7 +28,7 @@ useEffect(()=>{
   }
 
   return (isClient &&
-    <>
+    <div className='wrapper3'>
            <div className={"checkout-wrapper"}>
         <div>
           <h4>Total Price : R{usingContext.totalPrice}</h4>
@@ -70,7 +70,7 @@ useEffect(()=>{
         }
     </div>
     </div >
-    </>
+    </div>
   )
 }
 
