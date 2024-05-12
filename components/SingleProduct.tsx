@@ -3,7 +3,7 @@
 import React, { useContext, useState } from 'react'
 import Image from 'next/image'
 import context from '@/store/ContextComponent'
-import {FaChevronLeft, FaChevronRight} from "react-icons/fa"
+import {FaArrowAltCircleLeft, FaArrowAltCircleRight, FaPlusCircle, FaMinusCircle} from "react-icons/fa"
 
 type Props = {
     product : Product
@@ -34,8 +34,8 @@ const prevImage = ()=>{
       <div className='left'>
         <Image src={product.image[index]} alt={product.name} width={400} height={400}/>
         <div className='change-images'>
-        <button className='fa1' onClick={()=>prevImage()}><FaChevronLeft /></button>
-         <button  className='fa2' onClick={()=>nextImage()}><FaChevronRight /></button>
+        <button className='fa1' onClick={()=>prevImage()}><FaArrowAltCircleLeft/></button>
+         <button  className='fa2' onClick={()=>nextImage()}><FaArrowAltCircleRight/></button>
           {
             product.image.map((item, imageIndex)=>{
               return(
@@ -60,8 +60,8 @@ const prevImage = ()=>{
               Quantity : {usingContext.quantity}
             </div>
             <div>
-              <button className={`qb`} onClick={()=>usingContext.decQuantity()}>-</button>
-              <button className='qb' onClick={()=>usingContext.incQuantity()}>+</button>
+              <button className={`qb`} onClick={()=>usingContext.decQuantity()}><FaMinusCircle/></button>
+              <button className='qb' onClick={()=>usingContext.incQuantity()}><FaPlusCircle/></button>
             </div>
           </div>
           <div className='buy-buttons-wrapper'>

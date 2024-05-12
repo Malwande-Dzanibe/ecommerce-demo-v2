@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import React, {useContext, useEffect, useState} from 'react'
 import context  from '@/store/ContextComponent'
-import {FaCartPlus} from "react-icons/fa"
+import {FaCartPlus, FaGripfire} from "react-icons/fa"
+import {FaHouseChimney} from "react-icons/fa6"
 
 const NavBar = () => {
 
@@ -20,12 +21,18 @@ useEffect(()=>{
         <nav>
             <div className='logo-wrapper'>
                 <Link className='logo' href={"/"}>
-                    LOGO
+                   <FaGripfire/>
+                   <p>logo</p>
                 </Link>
             </div>
             <div className='links-wrapper'>
-                <Link href={"/cart"}>
+                <Link href={"/"} className='cart-w2'>
+                <FaHouseChimney className='linkss2'/>
+                <p>home</p>
+                </Link>
+                <Link href={"/cart"} className='cart-w'>
                 <FaCartPlus className='linkss2'/>
+                <p>cart</p>
                 </Link>
                 <Link className='linkss' href={"/cart"}>
                     {usingContext.totalQuantity}

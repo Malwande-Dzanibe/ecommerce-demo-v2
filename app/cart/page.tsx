@@ -3,6 +3,7 @@ import React, {useContext, useEffect, useState} from 'react'
 import  context from '@/store/ContextComponent'
 import Image from 'next/image'
 import Link from 'next/link'
+import {FaPlusCircle, FaMinusCircle, FaTimesCircle} from "react-icons/fa"
 
 const page = () => {
 
@@ -59,9 +60,9 @@ useEffect(()=>{
                           <p className='in-cart-q'>Quantity : {item.quantity}</p>
                         </div>
                         <div>
-                          <button className={`qqb`} onClick={()=>usingContext.toggleQuantityCart("dec", item)}>-</button>
-                          <button className='qqb' onClick={()=>usingContext.toggleQuantityCart("inc", item)}>+</button>
-                          <button className='qqb-remove' onClick={()=>usingContext.onRemove(item)}>x</button>
+                          <button className={`qqb`} onClick={()=>usingContext.toggleQuantityCart("dec", item)}><FaMinusCircle className='in-cart-btn'/></button>
+                          <button className='qqb' onClick={()=>usingContext.toggleQuantityCart("inc", item)}><FaPlusCircle className='in-cart-btn'/></button>
+                          <button className='qqb-remove' onClick={()=>usingContext.onRemove(item)}><FaTimesCircle className='in-cart-btn'/></button>
                         </div>
                       </div>
                     </div>

@@ -7,7 +7,7 @@ body{
 }
 
 nav{
-  height: 8vh;
+  min-height: 13vh;
   width: 100%;
 
   display: flex;
@@ -18,7 +18,12 @@ nav{
 
 .logo{
   font-weight: bolder;
-  color: #2b2b28;
+  color: rgb(227, 28, 28);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
 }
 
 .links{
@@ -29,6 +34,7 @@ nav{
 .links-wrapper{
   display: flex;
   align-items: center;
+  font-weight: bold;
 }
 
 .spinner{
@@ -41,6 +47,7 @@ nav{
 .linkss2{
   color: rgb(36, 111, 128);
   font-size: 20px;
+  margin-left: 3px;
 }
 
 .linkss{
@@ -54,12 +61,13 @@ nav{
   font-size: 13px;
   align-items: center;
   justify-content: center;
-  margin-top: -20px;
-  margin-left: -10px;
+  margin-top: -43px;
+  margin-left: -13px;
+  border: 2px rgb(211, 231, 237) solid;
 }
 
 .in-cart-q{
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
 }
 
@@ -175,13 +183,13 @@ svg{
   color: rgb(164, 161, 161);
 }
 
-.quantity{
-  margin-right: 10px;
-}
-
 .quantity-wrapper{
   display: flex;
   margin-bottom: 20px;
+}
+
+.quantity{
+  margin-right: 2px;
 }
 
 .quantity-wrapper2{
@@ -190,10 +198,11 @@ svg{
 }
 
 .qb{
-  border: solid transparent 1px;
-  padding: 0px 20px;
+  border: rgb(28, 190, 227) solid 1px ;
+  padding: 5px 20px;
   margin: 0px  3px;
-  background-color:  rgb(28, 190, 227);
+  background-color: rgb(211, 231, 237);
+  color:rgb(28, 190, 227); 
 }
 
 .detail{
@@ -217,18 +226,26 @@ svg{
  display: none;
 }
 
-.qqb{
-  border: solid transparent 1px;
-  padding: 0px 8px;
-  margin: 0px  3px;
-  background-color:  rgb(28, 190, 227);
+.in-cart-btn{
+  font-size: 12px;
 }
 
+.qqb{
+  border: rgb(28, 190, 227) solid 1px ;
+  padding: 5px 8px;
+  margin: 0px  2px;
+  color: rgb(28, 190, 227);
+  background-color: rgb(211, 231, 237);
+}
+
+
+
 .qqb-remove{
-  border: solid transparent 1px;
-  padding: 0px 8px;
-  margin: 0px  3px;
-  background-color:  rgb(227, 28, 28);
+  border: rgb(227, 28, 28) solid 1px ;
+  padding: 5px 8px;
+  background-color: rgb(211, 231, 237);
+  margin: 0px  2px;
+  color:  rgb(227, 28, 28);
 }
 
 .hey{
@@ -236,14 +253,18 @@ svg{
 }
 
 .fa1{
-  padding: 0px 20px;
-  background-color: rgb(28, 190, 227);
+  padding: 5px 20px;
+  background-color: rgb(211, 231, 237);
   margin-right: 5px;
+  color:rgb(28, 190, 227) ;
+  border: rgb(28, 190, 227) solid 1px ;
 }
 
 .fa2{
-  padding: 0px 20px;
-  background-color: rgb(28, 190, 227);
+  padding: 5px 20px;
+  background-color: rgb(211, 231, 237);
+  border: rgb(28, 190, 227) solid 1px ;
+  color:rgb(28, 190, 227);
 }
 
 .btn{
@@ -260,6 +281,23 @@ svg{
   margin: 5px;
 }
 
+.cart-w{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  font-size: 12px;
+}
+
+.cart-w2{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+}
+
 .change-images{
   display: flex;
   margin-top: 10px;
@@ -270,22 +308,28 @@ svg{
 }
 
 .add-to-cart{
-  border: solid black 1px;
   padding: 0px 20px;
   margin-right: 5px;
   transition: all .1s linear;
+  background-color: rgb(211, 231, 237);
+  color:rgb(28, 190, 227); 
+  border: rgb(28, 190, 227) solid 1px ;
+  font-weight: bold;
 }
 
 .add-to-cart:hover{
-  background-color:  rgb(28, 190, 227);
+  transform: scale(1.1);
 }
 
 .buy-now{
-  border: solid transparent 1px;
+  border: rgb(28, 190, 227) solid 1px ;
   padding: 0px 20px;
-  background-color:  rgb(28, 190, 227);
+  background-color:rgb(28, 190, 227) ;
   transition: all .1s linear;
+  color:rgb(211, 231, 237);
+  font-weight: bold;
 }
+
 
 .buy-now:hover{
 transform: scale(1.1);
