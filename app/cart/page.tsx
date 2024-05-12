@@ -15,6 +15,19 @@ useEffect(()=>{
   setIsClient(true)
 },[isClient])
 
+  if(!isClient){
+    return (
+      <div className='wrapper3'>
+          <p className='empty'>you do not have items in your cart</p>
+          <div>
+            <Link href={"/"} className='add-items'>
+                Add Items
+              </Link>
+          </div>
+      </div>
+    )
+  }
+
   if(usingContext.cartItems.length < 1){
     return (isClient &&
       <div className='wrapper3'>

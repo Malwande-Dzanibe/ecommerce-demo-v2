@@ -51,11 +51,11 @@ nav{
 }
 
 .linkss{
-  font-weight: bolder;
+  font-weight: bold;
   color:rgb(211, 231, 237);
   background-color: rgb(227, 28, 28);
-  min-height: 20px;
-  min-width: 20px;
+  min-height: 17px;
+  min-width: 17px;
   border-radius: 50%;
   display: flex;
   font-size: 13px;
@@ -63,7 +63,6 @@ nav{
   justify-content: center;
   margin-top: -43px;
   margin-left: -13px;
-  border: 2px rgb(211, 231, 237) solid;
 }
 
 .in-cart-q{
@@ -369,6 +368,10 @@ transform: scale(1.1);
   .items-wrapper{
     display: grid;
     grid-template-columns: 1fr ;
+  }
+
+  .logo-wrapper{
+    margin-left: -60px;
   }
 
   .wrapper2{
