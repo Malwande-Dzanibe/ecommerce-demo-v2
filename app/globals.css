@@ -127,6 +127,7 @@ nav{
 
 .wrapper2{
   padding: 0px 180px;
+  padding-bottom: 30px;
   display: flex;
   justify-content: center;
     min-height: 100vh;
@@ -140,7 +141,7 @@ nav{
 .item2{
   width: 200px;
   padding:5px;
-  margin: 15px 25px;
+  margin: 5px 25px;
 }
 
 .item3{
@@ -353,6 +354,7 @@ transform: scale(1.1);
   background-color:  rgb(28, 190, 227);
   padding: 5px 30px;
   margin-top: 10px;
+  margin-bottom: 35px;
   transition: all .1s linear;
 }
 
