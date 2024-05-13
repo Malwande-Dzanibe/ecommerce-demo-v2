@@ -1,9 +1,12 @@
 "use client" 
+
 import React, {useContext, useEffect, useState} from 'react'
 import  context from '@/store/ContextComponent'
 import Image from 'next/image'
 import Link from 'next/link'
 import {FaPlusCircle, FaMinusCircle, FaTimesCircle} from "react-icons/fa"
+import { Oval } from 'react-loader-spinner'
+import toast from 'react-hot-toast'
 
 const page = () => {
 
@@ -11,19 +14,24 @@ const usingContext = useContext(context) as ContextType
 
 const [isClient, setIsClient] = useState(false)
 
+const noPayment = ()=>{
+  return toast.success("no payment gateway system for this demo")
+}
+
 useEffect(()=>{
   setIsClient(true)
 },[isClient])
 
   if(!isClient){
     return (
-      <div className='wrapper3'>
-          <p className='empty'>you do not have items in your cart</p>
-          <div>
-            <Link href={"/"} className='add-items'>
-                Add Items
-              </Link>
-          </div>
+      <div className='spinner'>
+          <Oval
+          height="80"
+          width="80"
+          color="rgb(28, 190, 227)"
+          ariaLabel="loading"
+          wrapperClass="true"
+      />
       </div>
     )
   }
@@ -48,7 +56,7 @@ useEffect(()=>{
           <h4>Total Price : R{usingContext.totalPrice}</h4>
         </div>
           <div>
-            <button className='pay-now'>
+            <button className='pay-now' onClick={()=>noPayment()}>
               Pay Now
             </button>
           </div>

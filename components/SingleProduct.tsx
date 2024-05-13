@@ -1,9 +1,11 @@
 "use client"
 
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Image from 'next/image'
 import context from '@/store/ContextComponent'
 import {FaArrowAltCircleLeft, FaArrowAltCircleRight, FaPlusCircle, FaMinusCircle} from "react-icons/fa"
+import { Oval } from 'react-loader-spinner'
+import toast from 'react-hot-toast'
 
 type Props = {
     product : Product
@@ -13,6 +15,11 @@ const SingleProduct = ({product}:Props) => {
 
 const usingContext = useContext(context) as ContextType
 const [index, setIndex] = useState(0)
+const [isClient, setIsClient] = useState(false)
+
+const noPayment = ()=>{
+  return toast.success("no payment gateway system for this demo")
+}
 
 const nextImage = ()=>{
   if(index < product.image.length - 1){
@@ -27,6 +34,24 @@ const prevImage = ()=>{
   setIndex((prev)=>{
     return prev - 1
   })
+}
+
+useEffect(()=>{
+  setIsClient(true)
+},[isClient])
+
+if(!isClient){
+  return (
+    <div className='spinner'>
+        <Oval
+        height="80"
+        width="80"
+        color="rgb(28, 190, 227)"
+        ariaLabel="loading"
+        wrapperClass="true"
+    />
+    </div>
+  )
 }
 
   return (
@@ -69,7 +94,7 @@ const prevImage = ()=>{
                 <button className='add-to-cart' onClick={()=>usingContext.onAdd(product, usingContext.quantity)}>Add To Cart</button>
               </div>
               <div >
-                <button className='buy-now'>Buy Now</button>
+                <button className='buy-now' onClick={()=>noPayment()}>Buy Now</button>
               </div>
           </div>
       </div>

@@ -110,14 +110,14 @@ nav{
 }
 
 .wrapper{
-  padding: 30px 60px;
+  padding: 0px 60px;
   display: flex;
   justify-content: center;
   min-height: 100vh;
 }
 
 .wrapper3{
-  padding: 30px 60px;
+  padding: 0px 60px;
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -126,7 +126,7 @@ nav{
 }
 
 .wrapper2{
-  padding: 30px 180px;
+  padding: 0px 180px;
   display: flex;
   justify-content: center;
     min-height: 100vh;
@@ -247,10 +247,6 @@ svg{
   color:  rgb(227, 28, 28);
 }
 
-.hey{
-  background-color: orange;
-}
-
 .fa1{
   padding: 5px 20px;
   background-color: rgb(211, 231, 237);
@@ -318,6 +314,17 @@ svg{
 
 .add-to-cart:hover{
   transform: scale(1.1);
+}
+
+.socials{
+  display: flex;
+  margin-top: 20px;
+}
+
+.from-fa{
+  margin: 0px 5px ;
+  font-size: 14px;
+  color:rgb(28, 190, 227);
 }
 
 .buy-now{
@@ -454,6 +461,7 @@ transform: scale(1.1);
   align-items: center;
   justify-content: center;
   font-size: 10px;
+  flex-direction: column;
 }
 
 @media (min-width : 1200px){
