@@ -1,20 +1,26 @@
-"use client"
+"use client";
 
-import React, { useContext } from 'react'
-import context from '@/store/ContextComponent'
-import {FaCartPlus} from "react-icons/fa"
+import React, { useContext } from "react";
+import context from "@/store/ContextComponent";
+import { FaCartPlus } from "react-icons/fa";
 
 type Props = {
-    product : Product
-}
+  product: Product;
+};
 
-const AddToCartButton = ({product}:Props) => {
+const AddToCartButton = ({ product }: Props) => {
+  const usingContext = useContext(context) as ContextType;
 
-    const usingContext = useContext(context) as ContextType
-    
   return (
-        <button className='detail2' onClick={()=>usingContext.onAdd(product, 1)}><div className='detail3'><p>add to cart</p><div><FaCartPlus/></div></div> </button>
-  )
-}
+    <button className="detail2" onClick={() => usingContext.onAdd(product, 1)}>
+      <div className="detail3">
+        <p>add to cart</p>
+        <div>
+          <FaCartPlus />
+        </div>
+      </div>{" "}
+    </button>
+  );
+};
 
-export default AddToCartButton
+export default AddToCartButton;

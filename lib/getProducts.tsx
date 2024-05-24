@@ -1,13 +1,12 @@
-import { createClient,groq } from 'next-sanity'
+import { createClient, groq } from "next-sanity";
 
-const getProducts = async () : Promise<Product[]>=> {
-
+const getProducts = async (): Promise<Product[]> => {
   const client = createClient({
-    projectId : "jormnwr0",
+    projectId: "jormnwr0",
     dataset: "production",
     apiVersion: "2024-04-29",
-    useCdn: true
-  })
+    useCdn: true,
+  });
 
   const posts = await client.fetch(groq`*[_type == "products"]{
     _createdAt,
@@ -20,9 +19,9 @@ const getProducts = async () : Promise<Product[]>=> {
     price,
     "slug" : slug.current,
     quantity
-  }`  )
+  }`);
 
-  return posts
-}
+  return posts;
+};
 
-export default getProducts
+export default getProducts;
